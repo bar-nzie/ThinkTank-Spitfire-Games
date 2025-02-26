@@ -18,10 +18,6 @@ namespace Sean
         private bool _moveDown;
         private bool _isShooting;
 
-        public GameObject point1;
-        public GameObject point2;
-        public GameObject point3;
-
         private void Start()
         {
 /*          input.MovementLeftEvent += HandleMoveLeft;
@@ -101,12 +97,20 @@ namespace Sean
         {
             // if (_moveLeft)
             //{
-               // transform.position += Vector3.MoveTowards(transform.position, point3.transform.position, (speed * Time.deltaTime));
+            // transform.position += Vector3.MoveTowards(transform.position, point3.transform.position, (speed * Time.deltaTime));
             //}
             if (left.action.inProgress)
             {
                 Debug.Log("left");
-                transform.position = Vector3.Lerp(transform.position, point1.transform.position, (speed * Time.fixedDeltaTime));
+                transform.position -= new Vector3(speed * Time.fixedDeltaTime, 0, 0);
+
+                Vector3 rotation = transform.eulerAngles;
+                rotation.z -= 10f;
+                rotation.z = Mathf.Clamp(rotation.x, -45, 45);
+                rotation.y = 0f;
+                rotation.x = 0f;
+                transform.eulerAngles = rotation;
+
             }
             /*if (right.action.triggered)
             {
@@ -116,7 +120,15 @@ namespace Sean
             if (right.action.inProgress)
             {
                 Debug.Log("right");
-                transform.position = Vector3.Lerp(transform.position, point3.transform.position, (speed * Time.fixedDeltaTime));
+                transform.position += new Vector3(speed * Time.fixedDeltaTime, 0, 0);
+
+                Vector3 rotation = transform.eulerAngles;
+                rotation.z += 10f;
+                rotation.z = Mathf.Clamp(rotation.x, -45, 45);
+                rotation.y = 0f;
+                rotation.x = 0f;
+                transform.eulerAngles = rotation;
+
             }
 
 
