@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 
 public class WaveSpawner : MonoBehaviour
 {
 
-    [SerializeField] private float countdown;
+    [SerializeField] private float WaveCountdown = 1;
 
     [SerializeField] private GameObject spawnPoint;
 
@@ -45,13 +44,13 @@ public class WaveSpawner : MonoBehaviour
 
         if (readyToCountDown == true)
         {
-            countdown -= Time.deltaTime;
+            WaveCountdown -= Time.deltaTime;
         }
 
-        if (countdown <= 0 )
+        if (WaveCountdown < 0 )
         {
             readyToCountDown = false;
-            countdown = waves[currentWaveIndex].timeToNextWave;
+            WaveCountdown = waves[currentWaveIndex].timeToNextWave;
             StartCoroutine(SpawnWave());
         }
 
@@ -88,10 +87,5 @@ public class Wave
     public float timeToNextWave;
 
     [HideInInspector] public int enemiesLeft;
-
-    public int enemiesLeftGetter()
-    {
-        return enemiesLeft;
-    }
 }
 

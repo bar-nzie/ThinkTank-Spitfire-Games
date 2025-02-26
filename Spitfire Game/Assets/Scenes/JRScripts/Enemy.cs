@@ -13,15 +13,12 @@ public class Enemy : MonoBehaviour
 
     private int _currentWave;
 
-    private float countdown = 5f;
+    private float DeathCountdown = 5.0f;
 
 
     private void Start()
     {
-        _waveSpawner = GetComponent<WaveSpawner>();
-        _wave = GetComponent<Wave>();
-
-        _currentWave = _waveSpawner.currentWaveIndexGetter();
+        _waveSpawner = FindObjectOfType<WaveSpawner>();
     }
 
     // Update is called once per frame
@@ -29,13 +26,13 @@ public class Enemy : MonoBehaviour
     {
         transform.Translate(transform.forward * speed * Time.deltaTime);
 
-        countdown -= Time.deltaTime;
+        DeathCountdown -= Time.deltaTime;
 
-        if (countdown <= 0)
+        if (DeathCountdown <= 0)
         {
-            Destroy(gameObject);
-
             _waveSpawner.waves[_waveSpawner.currentWaveIndex].enemiesLeft--;
+
+            Destroy(gameObject);
         }
 
     }

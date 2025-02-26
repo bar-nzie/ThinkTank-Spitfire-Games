@@ -333,13 +333,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.694208, z: -0, w: 0.7197745}
-  m_LocalPosition: {x: 643, y: -129, z: -34}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 302, y: 9, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 3.4881}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -87.928, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1267822073
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,8 +454,8 @@ Transform:
   m_GameObject: {fileID: 1267822073}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.139984, y: -17.085403, z: -200}
-  m_LocalScale: {x: 208.98834, y: 208.98834, z: 208.98834}
+  m_LocalPosition: {x: -182, y: -17.085403, z: -422}
+  m_LocalScale: {x: 94.46064, y: 94.46064, z: 94.46064}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a382fa0ccf35a41a633203b468fe74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 0
+  countdown: 1
   spawnPoint: {fileID: 942757926}
   waves:
   - enemies:
@@ -497,15 +497,30 @@ MonoBehaviour:
     - {fileID: 4671980660384690878, guid: 9b2bb7a85ed0c7643aa413cfcbb1c3d3, type: 3}
     - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
     timeToNextEnemy: 3
-    timeToNextWave: 12
+    timeToNextWave: 2
     enemiesLeft: 0
-  - enemies: []
-    timeToNextEnemy: 0
-    timeToNextWave: 0
+  - enemies:
+    - {fileID: -1570380386582634251, guid: 6620e93381721554ca6138924d08bea5, type: 3}
+    - {fileID: -1570380386582634251, guid: 6620e93381721554ca6138924d08bea5, type: 3}
+    - {fileID: -1570380386582634251, guid: 6620e93381721554ca6138924d08bea5, type: 3}
+    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
+    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
+    - {fileID: 4671980660384690878, guid: 9b2bb7a85ed0c7643aa413cfcbb1c3d3, type: 3}
+    - {fileID: -1570380386582634251, guid: 6620e93381721554ca6138924d08bea5, type: 3}
+    - {fileID: -1570380386582634251, guid: 6620e93381721554ca6138924d08bea5, type: 3}
+    - {fileID: 4671980660384690878, guid: 9b2bb7a85ed0c7643aa413cfcbb1c3d3, type: 3}
+    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
+    timeToNextEnemy: 3
+    timeToNextWave: 2
     enemiesLeft: 0
-  - enemies: []
-    timeToNextEnemy: 0
-    timeToNextWave: 0
+  - enemies:
+    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
+    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
+    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
+    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
+    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
+    timeToNextEnemy: 1
+    timeToNextWave: 2
     enemiesLeft: 0
   currentWaveIndex: 0
 --- !u!4 &1538508160
@@ -517,7 +532,7 @@ Transform:
   m_GameObject: {fileID: 1538508158}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 210.9, y: 0, z: 72.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

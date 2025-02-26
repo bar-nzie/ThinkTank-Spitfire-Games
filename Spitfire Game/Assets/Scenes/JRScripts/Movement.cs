@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     float smooth = 5.0f;
     float tiltAngle = 60.0f;
