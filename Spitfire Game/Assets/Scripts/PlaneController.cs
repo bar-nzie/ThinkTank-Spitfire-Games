@@ -18,6 +18,14 @@ namespace Sean
         private bool _moveDown;
         private bool _isShooting;
 
+        private float _smooth = 5.0f;
+        private float tiltAngle = 50.0f;
+
+        
+        //float tiltAroundX = Input.GetAxis("Vertical") * tiltAngle;
+
+        Quaternion _target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
+
         private void Start()
         {
 /*          input.MovementLeftEvent += HandleMoveLeft;
@@ -102,14 +110,19 @@ namespace Sean
             if (left.action.inProgress)
             {
                 Debug.Log("left");
+                
                 transform.position -= new Vector3(speed * Time.fixedDeltaTime, 0, 0);
 
-                Vector3 rotation = transform.eulerAngles;
-                rotation.z -= 10f;
-                rotation.z = Mathf.Clamp(rotation.x, -45, 45);
-                rotation.y = 0f;
-                rotation.x = 0f;
-                transform.eulerAngles = rotation;
+                //Vector3 rotation = transform.eulerAngles;
+                //rotation.z -= 10f;
+                //rotation.z = Mathf.Clamp(rotation.x, -45, 45);
+                //rotation.y = 0f;
+                //rotation.x = 0f;
+                //transform.eulerAngles = rotation;
+
+                //Quaternion _target = Quaternion.Euler(tiltAroundX, 0, tiltAroundZ);
+
+                //transform.rotation = Quaternion.Slerp(transform.rotation, _target, Time.deltaTime * _smooth);
 
             }
             /*if (right.action.triggered)
@@ -120,14 +133,20 @@ namespace Sean
             if (right.action.inProgress)
             {
                 Debug.Log("right");
+
+                float tiltAroundZ = Input.GetAxis("Horizontal") * tiltAngle;
+
                 transform.position += new Vector3(speed * Time.fixedDeltaTime, 0, 0);
 
-                Vector3 rotation = transform.eulerAngles;
-                rotation.z += 10f;
-                rotation.z = Mathf.Clamp(rotation.x, -45, 45);
-                rotation.y = 0f;
-                rotation.x = 0f;
-                transform.eulerAngles = rotation;
+                transform.rotation = Quaternion.Slerp(transform.rotation, _target, Time.deltaTime * _smooth);
+
+
+                //Vector3 rotation = transform.eulerAngles;
+                //rotation.z += 10f;
+                //rotation.z = Mathf.Clamp(rotation.x, -45, 45);
+                //rotation.y = 0f;
+                //rotation.x = 0f;
+                //transform.eulerAngles = rotation;
 
             }
 
