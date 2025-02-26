@@ -132,12 +132,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b4d74353d8f695d429176c3a81791ac8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b4d74353d8f695d429176c3a81791ac8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b4d74353d8f695d429176c3a81791ac8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40.46
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4d74353d8f695d429176c3a81791ac8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4d74353d8f695d429176c3a81791ac8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -364,7 +372,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5384078, y: -0, z: -0, w: 0.8426845}
-  m_LocalPosition: {x: 0, y: 13.31, z: -10}
+  m_LocalPosition: {x: 0, y: 35.8, z: 19.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -388,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4520760886471159497, guid: e2f1dd54f27b5de4aa3f68abe048d997, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 50
+      value: 104
       objectReference: {fileID: 0}
     - target: {fileID: 4520760886471159497, guid: e2f1dd54f27b5de4aa3f68abe048d997, type: 3}
       propertyPath: m_LocalRotation.w
@@ -421,6 +429,14 @@ PrefabInstance:
     - target: {fileID: 5458599102027831144, guid: e2f1dd54f27b5de4aa3f68abe048d997, type: 3}
       propertyPath: m_Name
       value: chunkSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670822884365507859, guid: e2f1dd54f27b5de4aa3f68abe048d997, type: 3}
+      propertyPath: chunkInterval
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670822884365507859, guid: e2f1dd54f27b5de4aa3f68abe048d997, type: 3}
+      propertyPath: prefab.Array.size
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
