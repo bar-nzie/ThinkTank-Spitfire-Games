@@ -31,3 +31,29 @@ Asset Production:
     Gunfire effect
     Skybox
     Water plane
+
+Tasks:
+
+Sean: 
+
+- Player movement
+
+Joshua:
+
+- Level generation using prefabs
+
+Morgan:
+
+- UI (not graphics)
+- Plane shooting?
+
+James:
+
+- Enemy spawn
+
+Mustafa:
+
+- Low poly plane model with propeller rig
+
+Oseyem:
+- UI graphics
