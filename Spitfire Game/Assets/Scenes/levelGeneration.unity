@@ -575,12 +575,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1194997523}
-  enemies:
+  enemyTypeList:
+  - {fileID: 7753991946324814243, guid: 6620e93381721554ca6138924d08bea5, type: 3}
   - {fileID: 7753991946324814243, guid: 9b2bb7a85ed0c7643aa413cfcbb1c3d3, type: 3}
   - {fileID: 7753991946324814243, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
-  - {fileID: 7753991946324814243, guid: 6620e93381721554ca6138924d08bea5, type: 3}
-  numberOfWaves: 5
-  numberOfEnemiesInWave: 12
+  numberOfEnemiesInWave: 2
+  numberOfWaves: 2
   currentWaveIndex: 0
   timeToNextEnemy: 3
   timeToNextWave: 10

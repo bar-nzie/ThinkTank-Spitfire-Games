@@ -6,14 +6,14 @@ public class WaveSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject spawnPoint;
 
-    public GameObject[] enemies;
+    [SerializeField] GameObject[] enemyTypeList;
 
-    [SerializeField] public int numberOfWaves;
-    public int numberOfEnemiesInWave;
+    [SerializeField] int numberOfEnemiesInWave;
+    [SerializeField] int numberOfWaves;
+    [SerializeField] int currentWaveIndex = 0;
 
-    public int currentWaveIndex = 0;
-    public float timeToNextEnemy;
-    public float timeToNextWave;
+    [SerializeField] float timeToNextEnemy;
+    [SerializeField] float timeToNextWave;
 
     int spawnedEnemies;
 
@@ -28,7 +28,7 @@ public class WaveSpawner : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (currentWaveIndex >= numberOfWaves)
+        if (currentWaveIndex > numberOfWaves)
         {
             Debug.Log("You Win");
         }
@@ -37,21 +37,22 @@ public class WaveSpawner : MonoBehaviour
 
     private void SpawnEnemiesInWave()
     {
-        currentWaveIndex++;
-        if (spawnedEnemies <= numberOfEnemiesInWave)
-        {
-            spawnedEnemies++;
-            int randomEnemy = Random.Range(0, enemies.Length);
-            Instantiate(enemies[randomEnemy], new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z), Quaternion.identity);
-            StartCoroutine(DelayEnemySpawn());
-        } else
-        {
+        Debug.Log(spawnedEnemies);
+        if (currentWaveIndex < numberOfWaves) { 
             currentWaveIndex++;
-            if (currentWaveIndex <= numberOfWaves)
+            if (spawnedEnemies < numberOfEnemiesInWave)
+            {
+                SpawnAnEnemy();
+                spawnedEnemies++;
+                StartCoroutine(DelayEnemySpawn());
+            }
+            else
             {
                 StartCoroutine(DelayWaveSpawn());
+
             }
         }
+
     }
 
     private IEnumerator DelayEnemySpawn()
@@ -66,6 +67,12 @@ public class WaveSpawner : MonoBehaviour
 
         spawnedEnemies = 0;
         SpawnEnemiesInWave();
+    }
+
+    private void SpawnAnEnemy()
+    {
+        int randomEnemy = Random.Range(0, enemyTypeList.Length);
+        Instantiate(enemyTypeList[randomEnemy], new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z), Quaternion.identity);
     }
 }
 
