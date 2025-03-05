@@ -5,12 +5,21 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
+    private InputSubscription PlaneControls;
     float smooth = 5.0f;
     float tiltAngle = 60.0f;
+    float moveSpeed = 10f;
+
+    private void Start()
+    {
+        PlaneControls = GameObject.Find("GameManager").GetComponent<InputSubscription>();
+    }
 
     // Update is called once per frame
     void Update()
     {
+        float steerInput = PlaneControls.NormalizedMovementInput.x;
+
         // Smoothly tilts a transform towards a target rotation.
         float tiltAroundZ = Input.GetAxis("Horizontal") * tiltAngle;
         float tiltAroundX = Input.GetAxis("Vertical") * tiltAngle;
