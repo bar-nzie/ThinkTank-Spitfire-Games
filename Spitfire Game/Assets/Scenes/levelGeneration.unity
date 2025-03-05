@@ -574,31 +574,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a382fa0ccf35a41a633203b468fe74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaveCountdown: 1
   spawnPoint: {fileID: 1194997523}
-  waves:
-  - enemies:
-    - {fileID: -1570380386582634251, guid: 6620e93381721554ca6138924d08bea5, type: 3}
-    - {fileID: 4671980660384690878, guid: 9b2bb7a85ed0c7643aa413cfcbb1c3d3, type: 3}
-    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
-    timeToNextEnemy: 3
-    timeToNextWave: 2
-    enemiesLeft: 0
-  - enemies:
-    - {fileID: -1570380386582634251, guid: 6620e93381721554ca6138924d08bea5, type: 3}
-    - {fileID: 4671980660384690878, guid: 9b2bb7a85ed0c7643aa413cfcbb1c3d3, type: 3}
-    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
-    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
-    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
-    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
-    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
-    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
-    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
-    - {fileID: 1487427663357993048, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
-    timeToNextEnemy: 3
-    timeToNextWave: 2
-    enemiesLeft: 0
+  enemies:
+  - {fileID: 7753991946324814243, guid: 9b2bb7a85ed0c7643aa413cfcbb1c3d3, type: 3}
+  - {fileID: 7753991946324814243, guid: 738e02fc6b63761409d9cdc3de237ba3, type: 3}
+  - {fileID: 7753991946324814243, guid: 6620e93381721554ca6138924d08bea5, type: 3}
+  numberOfWaves: 5
+  numberOfEnemiesInWave: 12
   currentWaveIndex: 0
+  timeToNextEnemy: 3
+  timeToNextWave: 10
 --- !u!1001 &8981228328727170057
 PrefabInstance:
   m_ObjectHideFlags: 0
