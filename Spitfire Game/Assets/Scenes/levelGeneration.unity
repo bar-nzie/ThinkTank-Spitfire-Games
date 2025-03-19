@@ -253,7 +253,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b4d74353d8f695d429176c3a81791ac8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 4.874265
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4d74353d8f695d429176c3a81791ac8, type: 3}
       propertyPath: m_LocalScale.z
@@ -261,7 +261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4d74353d8f695d429176c3a81791ac8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.46
+      value: 124.81
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b4d74353d8f695d429176c3a81791ac8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -649,7 +649,7 @@ MonoBehaviour:
   numberOfEnemiesInWave: 10
   numberOfWaves: 4
   currentWaveIndex: 0
-  timeToNextEnemy: 2
+  timeToNextEnemy: 4
   timeToNextWave: 6
 --- !u!1001 &8981228328727170057
 PrefabInstance:
