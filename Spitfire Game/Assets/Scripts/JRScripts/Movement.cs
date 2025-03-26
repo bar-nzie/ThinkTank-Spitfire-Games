@@ -8,9 +8,9 @@ public class Movement : MonoBehaviour
     [SerializeField] GameplaySubcription PlaneControls;
     Rigidbody rb;
 
-    float smooth = 5.0f;
-    float tiltAngle = 60.0f;
-    float moveSpeed = 10f;
+    public float smooth = 5.0f;
+    public float tiltAngle = 60.0f;
+    public float moveSpeed = 10f;
 
     Vector2 _PlaneControl;
 
@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
         //float tiltAroundX = Input.GetAxis("Vertical") * tiltAngle;
 
         // Rotate the cube by converting the angles into a quaternion.
-        Quaternion target = Quaternion.Euler(0, 0, -tiltAroundZ);
+        Quaternion target = Quaternion.Euler(-tiltAroundZ, -90, 0);
 
         // Dampen towards the target rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
