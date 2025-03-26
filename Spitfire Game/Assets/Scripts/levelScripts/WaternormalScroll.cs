@@ -21,9 +21,5 @@ public class WaternormalScroll : MonoBehaviour
         float offsetY = Time.time * normalSpeedY;
         rend.material.SetTextureOffset("_DetailNormalMap", new Vector2(offsetX, offsetY));
 
-        foreach (var property in rend.material.GetTexturePropertyNames())
-        {
-            Debug.Log(property);
-        }
     }
 }
