@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Spitfire Game/Assets/Packages.meta
 guid: 102a25812891093409c3ef6e530690e2
 folderAsset: yes
+========
+guid: 08956748ae1c16642aec29d492cec215
+>>>>>>>> dcc0cdf7c2e00c1e63019e47d93b52761d8590fb:Spitfire Game/Assets/Temp/FSTimeGet-495ce8e0d73a8bc4bb78015a335a67ca.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
