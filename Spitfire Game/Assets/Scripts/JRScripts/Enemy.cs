@@ -9,9 +9,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float speed;
 
     private WaveSpawner _waveSpawner;
-    private Wave _wave;
-
-    private int _currentWave;
 
     private float DeathCountdown = 5.0f;
 
@@ -29,9 +26,7 @@ public class Enemy : MonoBehaviour
         DeathCountdown -= Time.deltaTime;
 
         if (DeathCountdown <= 0)
-        {
-            _waveSpawner.waves[_waveSpawner.currentWaveIndex].enemiesLeft--;
-
+        { 
             Destroy(gameObject);
         }
 

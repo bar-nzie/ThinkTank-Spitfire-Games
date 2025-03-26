@@ -4,88 +4,86 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+    [SerializeField] private GameObject[] spawnPoint;
 
-    [SerializeField] private float WaveCountdown = 1;
+    [SerializeField] GameObject[] enemyTypeList;
 
-    [SerializeField] private GameObject spawnPoint;
+    [SerializeField] int numberOfEnemiesInWave;
+    [SerializeField] int numberOfWaves;
+    [SerializeField] int currentWaveIndex = 0;
 
-    [SerializeField] public Wave[] waves;
+    [SerializeField] float timeToNextEnemy;
+    [SerializeField] float timeToNextWave;
 
-    public int currentWaveIndex = 0;
-    private bool readyToCountDown;
+    int spawnedEnemies;
+    int randomSpawn;
 
-    public int currentWaveIndexGetter()
-    {
-        return currentWaveIndex;
-    }
+    bool isSpawningWave = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        readyToCountDown = true;
-
-        for (int i = 0; i < waves.Length; i++)
-        {
-            waves[i].enemiesLeft = waves[i].enemies.Length;
-        }
-        
+        StartCoroutine(DelayWaveSpawn());
     }
 
     // Update is called once per frame
     private void Update()
     {
-
-        if (currentWaveIndex >= waves.Length)
+        if (currentWaveIndex > numberOfWaves)
         {
-            Debug.Log("Reached end of waves");
-            return;
+            Debug.Log("You Win");
         }
 
-        if (readyToCountDown == true)
-        {
-            WaveCountdown -= Time.deltaTime;
-        }
-
-        if (WaveCountdown < 0 )
-        {
-            readyToCountDown = false;
-            WaveCountdown = waves[currentWaveIndex].timeToNextWave;
-            StartCoroutine(SpawnWave());
-        }
-
-        if (waves[currentWaveIndex].enemiesLeft == 0)
-        {
-            readyToCountDown = true;
-            currentWaveIndex++;
-        }
-        
     }
 
-    private IEnumerator SpawnWave()
+    private void SpawnEnemiesInWave()
     {
-        if (currentWaveIndex < waves.Length)
-        {
-            for (int i = 0; i < waves[currentWaveIndex].enemies.Length; i++)
+        Debug.Log(spawnedEnemies);
+        if (currentWaveIndex < numberOfWaves) { 
+            if (spawnedEnemies < numberOfEnemiesInWave)
             {
-                Enemy enemy = Instantiate(waves[currentWaveIndex].enemies[i], spawnPoint.transform);
+                SpawnAnEnemy();
+                spawnedEnemies++;
+                StartCoroutine(DelayEnemySpawn());
+            }
+            else
+            {
+                StartCoroutine(DelayWaveSpawn());
 
-                enemy.transform.SetParent(spawnPoint.transform);
-
-                yield return new WaitForSeconds(waves[currentWaveIndex].timeToNextEnemy);
             }
         }
 
     }
+
+    private IEnumerator DelayEnemySpawn()
+    {
+        yield return new WaitForSeconds(timeToNextEnemy);
+        SpawnEnemiesInWave();
+    }
+
+    private IEnumerator DelayWaveSpawn()
+    {
+        yield return new WaitForSeconds(timeToNextWave);
+
+        spawnedEnemies = 0;
+        currentWaveIndex++;
+        SpawnEnemiesInWave();
+    }
+
+    private int spawnPointPicker()
+    {
+        randomSpawn = Random.Range(0, spawnPoint.Length);
+        return randomSpawn;
+    }
+
+    private void SpawnAnEnemy()
+    {
+        spawnPointPicker();
+        int randomEnemy = Random.Range(0, enemyTypeList.Length);
+        Instantiate(enemyTypeList[randomEnemy], new Vector3(spawnPoint[randomSpawn].transform.position.x, spawnPoint[randomSpawn].transform.position.y, spawnPoint[randomSpawn].transform.position.z), Quaternion.identity);
+    }
 }
 
-[System.Serializable]
-public class Wave
-{
-    public Enemy[] enemies;
-    public float timeToNextEnemy;
-    public float timeToNextWave;
 
-    [HideInInspector] public int enemiesLeft;
-}
+
 
