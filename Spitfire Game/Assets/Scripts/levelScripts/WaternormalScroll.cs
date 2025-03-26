@@ -23,7 +23,7 @@ public class WaternormalScroll : MonoBehaviour
 
         foreach (var property in rend.material.GetTexturePropertyNames())
         {
-            Debug.Log(property);
+            //Debug.Log(property);
         }
     }
 }

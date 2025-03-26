@@ -20,8 +20,8 @@ public class GameplaySubcription : MonoBehaviour
         _Input.Gameplay.Movement.performed += SetMovement;
         _Input.Gameplay.Movement.canceled += SetMovement;
 
-        _Input.Gameplay.Actionbutton.started += SetMovement;
-        _Input.Gameplay.Actionbutton.canceled += SetMovement;
+        _Input.Gameplay.Actionbutton.started += SetAction;
+        _Input.Gameplay.Actionbutton.canceled += SetAction;
 
 
     }
@@ -33,8 +33,8 @@ public class GameplaySubcription : MonoBehaviour
         _Input.Gameplay.Movement.performed -= SetMovement;
         _Input.Gameplay.Movement.canceled -= SetMovement;
 
-        _Input.Gameplay.Actionbutton.started -= SetMovement;
-        _Input.Gameplay.Actionbutton.canceled -= SetMovement;
+        _Input.Gameplay.Actionbutton.started -= SetAction;
+        _Input.Gameplay.Actionbutton.canceled -= SetAction;
     }
 
     void SetMovement(InputAction.CallbackContext ctx)
