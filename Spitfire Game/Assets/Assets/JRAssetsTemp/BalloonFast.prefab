@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5473827496797300958}
   - component: {fileID: 3773399867711448610}
   - component: {fileID: 1487427663357993048}
+  - component: {fileID: 3970022740457897284}
   m_Layer: 0
   m_Name: BalloonFast
   m_TagString: Untagged
@@ -119,3 +120,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &3970022740457897284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7753991946324814243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20d987a7b740e0488de888eb5b940ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 5

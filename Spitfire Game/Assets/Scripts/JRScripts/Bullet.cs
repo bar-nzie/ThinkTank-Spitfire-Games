@@ -6,12 +6,14 @@ public class Bullet : MonoBehaviour
 {
     Rigidbody rb;
 
-    public float Bullet_Speed = 10.0f;
+    Enemy enemy;
 
+    public float Bullet_Speed = 10.0f;
 
     // Start is called before the first frame update
     private void Awake()
     {
+        enemy = GetComponent<Enemy>();
         rb = GetComponent<Rigidbody>();
         rb.velocity = (Vector3.forward * Bullet_Speed);
     }
@@ -30,7 +32,7 @@ public class Bullet : MonoBehaviour
         }
         else if (other.name != "PlaneTest" && other.name != "Bullet(Clone)")
         {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<TakeDamage>().takeDamage();
             Destroy(this.gameObject);
         }
     }
