@@ -32,7 +32,7 @@ Shader "Unlit/ScrollingWaterShader"
         {
             float2 offset = _Time.y * _Speed;
             o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb * _Color.rgb;
-            o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap + offset));
+            o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap - offset));
             o.Metallic = _Metallic;
             o.Smoothness = _Smoothness;
         }
