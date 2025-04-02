@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  DeathCountdown: 10
 --- !u!114 &1160775061820980164
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1123,7 +1123,7 @@ MonoBehaviour:
   numberOfEnemiesInWave: 10
   numberOfWaves: 3
   currentWaveIndex: 0
-  timeToNextEnemy: 2
+  timeToNextEnemy: 4
   timeToNextWave: 4
 --- !u!1001 &8981228328727170057
 PrefabInstance:

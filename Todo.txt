@@ -1,17 +1,15 @@
-- Record voice lines
-- Fix shooting
-- Increase movement speed
-- Stop water clipping
 - Visual effects (shooting/ balloon pop)
-- Textures
-- Water ripple direction
+- Plane Textures
+- Lose condition?
 - More visual feedback on balloons 
+- Pitch shifting
+
 
 - Attract sequence/ main menu
 - Add sound effects
  (shooting, plane engines, balloon pop)
 - Stop Pilot moving offscreen
 
-
+Oseyem
 - RAF decals
 - Plane metal material texture
