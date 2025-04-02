@@ -3,7 +3,7 @@
 - Lose condition?
 - More visual feedback on balloons 
 - Pitch shifting
-
+- Ballon hitboxes
 
 - Attract sequence/ main menu
 - Add sound effects
