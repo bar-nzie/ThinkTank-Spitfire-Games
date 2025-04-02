@@ -31,7 +31,7 @@ public class Shooting : MonoBehaviour
             else
             {
 
-                Debug.Log("Button Pressed");
+                //Debug.Log("Button Pressed");
                 if (BulletPrefab == null)
                 {
                     Debug.LogWarning("Bullet prefab is not assigned.");
