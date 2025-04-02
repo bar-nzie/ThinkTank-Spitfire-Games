@@ -12,6 +12,9 @@ public class Shooting : MonoBehaviour
     Rigidbody rb;
 
     float Timer;
+    public ParticleSystem muzzleFlashParticleSystem;
+    public ParticleSystem muzzleFlashParticleSystem1;
+    private bool isShooting = false;
 
     bool ActionButton = false;
 
@@ -20,6 +23,8 @@ public class Shooting : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Timer = shootDelay;
+        muzzleFlashParticleSystem.Stop();
+        muzzleFlashParticleSystem1.Stop();
     }
 
     // Update is called once per frame
@@ -41,11 +46,15 @@ public class Shooting : MonoBehaviour
                     return;
                 }
                 Timer = 0;
+                muzzleFlashParticleSystem.Play();
+                muzzleFlashParticleSystem1.Play();
                 GameObject MLI_bullet = Instantiate(BulletPrefab, rb.position, rb.rotation);
             }
         }
         else
         {
+            muzzleFlashParticleSystem.Stop();
+            muzzleFlashParticleSystem1.Stop();
             Timer = shootDelay;
         }
     }
