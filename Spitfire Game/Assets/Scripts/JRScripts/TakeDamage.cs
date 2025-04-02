@@ -5,12 +5,17 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class TakeDamage : MonoBehaviour
 {
-/*    ScoreUpdateTestScript score;*/
+    /*    ScoreUpdateTestScript score;*/
+
+    private Renderer rend;
+    private Color originalColour;
 
     public int Health;
     private void Awake()
     {
 /*        score = GetComponent<ScoreUpdateTestScript>();*/
+        rend = GetComponent<Renderer>();
+        originalColour = rend.material.color;
     }
     public void takeDamage()
     {
@@ -20,5 +25,13 @@ public class TakeDamage : MonoBehaviour
             ScoreUpdateTestScript.Instance.scoreIncreaser();
             Destroy(this.gameObject);
         }
+        StartCoroutine(FlashEffect());
+    }
+
+    IEnumerator FlashEffect()
+    {
+        rend.material.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        rend.material.color = originalColour;
     }
 }
