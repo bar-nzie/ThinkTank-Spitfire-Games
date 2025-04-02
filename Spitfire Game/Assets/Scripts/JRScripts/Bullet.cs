@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
         enemy = GetComponent<Enemy>();
         rb = GetComponent<Rigidbody>();
         rb.velocity = (Vector3.forward * Bullet_Speed);
+        
     }
 
     // Update is called once per frame

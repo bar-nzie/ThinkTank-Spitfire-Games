@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public Text score;
+
     public void Setup(int scoreValue)
     {
         gameObject.SetActive(true);
