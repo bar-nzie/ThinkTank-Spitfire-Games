@@ -1,15 +1,28 @@
 - Visual effects (shooting/ balloon pop)
-- Plane Textures
-- Lose condition?
-- More visual feedback on balloons 
-- Pitch shifting
-- Ballon hitboxes
+- Scrolling text
+- Adding the voice in
 
+Mustafa
+- Plane Textures
+
+Sean
 - Attract sequence/ main menu
-- Add sound effects
  (shooting, plane engines, balloon pop)
 - Stop Pilot moving offscreen
 
 Oseyem
 - RAF decals
 - Plane metal material texture
+- Commander
+
+James
+- Win condition?
+- Add sound effects
+- Pitch shifting
+
+Josh
+- More visual feedback on balloons 
+- Balloon hitboxes
+
+Morgan
+- No

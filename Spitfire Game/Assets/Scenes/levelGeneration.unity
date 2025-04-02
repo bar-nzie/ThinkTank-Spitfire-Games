@@ -996,7 +996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlaneControls: {fileID: 1091401643}
   BulletPrefab: {fileID: 2723207053558001756, guid: ec2a0d3fe85c76b42a3c862e54e58e1c, type: 3}
-  Firerate: 0.1
+  shootDelay: 0.1
 --- !u!1 &1977375714
 GameObject:
   m_ObjectHideFlags: 0

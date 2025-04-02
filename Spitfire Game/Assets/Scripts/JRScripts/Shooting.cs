@@ -5,18 +5,21 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] GameplaySubcription PlaneControls;
+    [SerializeField] GameObject BulletPrefab;
+    
+    [SerializeField] float shootDelay = 0.1f;
+    
     Rigidbody rb;
-    public GameObject BulletPrefab;
-    public float Firerate = 1.0f;
 
     float Timer;
 
     bool ActionButton = false;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Timer = Firerate;
+        Timer = shootDelay;
     }
 
     // Update is called once per frame
@@ -24,7 +27,7 @@ public class Shooting : MonoBehaviour
     {
         if (PlaneControls.ActionButton)
         {
-            if (Timer < Firerate)
+            if (Timer < shootDelay)
             {
                 Timer += Time.deltaTime;
             }
@@ -43,7 +46,7 @@ public class Shooting : MonoBehaviour
         }
         else
         {
-            Timer = Firerate;
+            Timer = shootDelay;
         }
     }
 }

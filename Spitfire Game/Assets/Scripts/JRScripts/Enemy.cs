@@ -10,9 +10,6 @@ public class Enemy : MonoBehaviour
 
     private WaveSpawner _waveSpawner;
 
-
-    [SerializeField] float DeathCountdown = 7.0f;
-
     Vector3 enemyDespawnPoint;
 
 
@@ -28,8 +25,6 @@ public class Enemy : MonoBehaviour
     {
        // transform.Translate(transform.forward * -speed * Time.deltaTime);
         transform.position = Vector3.MoveTowards(transform.position, enemyDespawnPoint, speed * Time.deltaTime);
-
-        DeathCountdown -= Time.deltaTime;
 
         if (Vector3.Distance(transform.position, enemyDespawnPoint) < 0.01f)
         { 
