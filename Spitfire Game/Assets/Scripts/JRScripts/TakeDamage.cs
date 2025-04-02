@@ -9,7 +9,7 @@ public class TakeDamage : MonoBehaviour
 
     private Renderer rend;
     private Color originalColour;
-
+    public GameObject explosionPrefab;
     public int Health;
     private void Awake()
     {
@@ -23,6 +23,7 @@ public class TakeDamage : MonoBehaviour
         if (Health <= 0)
         {
             ScoreUpdateTestScript.Instance.scoreIncreaser();
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
         StartCoroutine(FlashEffect());
