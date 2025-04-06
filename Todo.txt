@@ -1,4 +1,6 @@
 - Adding the voice in
+- Camera perspective
+- Pop clone despawn
 
 Mustafa
 - Plane Textures

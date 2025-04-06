@@ -474,7 +474,6 @@ GameObject:
   - component: {fileID: 756294793}
   - component: {fileID: 756294796}
   - component: {fileID: 756294795}
-  - component: {fileID: 756294794}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -501,19 +500,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
---- !u!114 &756294794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756294792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37b8298386c79354db48cfdca82f9162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: {fileID: 756294795}
 --- !u!114 &756294795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,7 +527,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -707,10 +693,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1091401641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fb3a62ee3ca1247a068f2507f5d46d, type: 3}
+  m_Script: {fileID: 11500000, guid: 37b8298386c79354db48cfdca82f9162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 756294794}
+  ScoreTextRef: {fileID: 756294795}
   scoreAdd: 0
 --- !u!1 &1194997523
 GameObject:
