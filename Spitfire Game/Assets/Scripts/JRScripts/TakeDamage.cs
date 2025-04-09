@@ -22,7 +22,7 @@ public class TakeDamage : MonoBehaviour
         Health -= 1;
         if (Health <= 0)
         {
-            ScoreUpdateTestScript.Instance.scoreIncreaser();
+            Score.Instance.scoreIncreaser();
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }

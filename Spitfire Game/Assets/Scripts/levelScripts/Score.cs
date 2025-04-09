@@ -5,11 +5,37 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public Text score;
+    [SerializeField] Text ScoreTextRef;
 
-    public void Setup(int scoreValue)
+    [SerializeField] int scoreAdd = 0;
+
+    private static Score _instance;
+
+    public static Score Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<Score>();
+            }
+            return _instance;
+        }
+    }
+    public void Update()
+    {
+        //scoreIncreaser();
+    }
+
+    public void scoreIncreaser()
+    {
+        //Debug.Log("score added");
+        scoreAdd++;
+        Setup(scoreAdd);
+    }
+    void Setup(int scoreValue)
     {
         gameObject.SetActive(true);
-        score.text = "Score : " + scoreValue.ToString();
+        ScoreTextRef.text = "Score : " + scoreValue.ToString();
     }
 }
