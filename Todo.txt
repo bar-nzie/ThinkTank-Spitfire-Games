@@ -12,3 +12,4 @@ Josh
 
 Morgan
 - Adding the voice in
+- Adjust bullet spawn location to wings
