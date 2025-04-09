@@ -1,27 +1,14 @@
-- Adding the voice in
-- Camera perspective
-- Pop clone despawn
-
-Mustafa
-- Plane Textures
-
 Sean
 - Attract sequence/ main menu
- (shooting, plane engines, balloon pop)
 - Stop Pilot moving offscreen
-
-Oseyem
-- RAF decals
-- Plane metal material texture
-- Commander
 
 James
 - Win condition?
-- Add sound effects
+- Add sound effects (shooting, plane engines, balloon pop)
 - Pitch shifting
 
 Josh
 - Scrolling text
 
 Morgan
-- No
+- Adding the voice in
