@@ -18,8 +18,6 @@ public class WaveSpawner : MonoBehaviour
     int spawnedEnemies;
     int randomSpawn;
 
-    bool isSpawningWave = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +37,7 @@ public class WaveSpawner : MonoBehaviour
     private void SpawnEnemiesInWave()
     {
         Debug.Log(spawnedEnemies);
-        if (currentWaveIndex < numberOfWaves) { 
+        if (currentWaveIndex <= numberOfWaves) { 
             if (spawnedEnemies < numberOfEnemiesInWave)
             {
                 SpawnAnEnemy();

@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Wall")
+        if (other.name == "BulletStopper")
         {
             Destroy(this.gameObject);
         }
