@@ -1,3 +1,9 @@
+Fix gunfire effect
+Delete "pop clone" objects
+Adjust text
+More island prefabs?
+Waves get faster?
+
 Sean
 - Attract sequence
 
