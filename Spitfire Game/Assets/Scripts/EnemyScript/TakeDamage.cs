@@ -5,15 +5,25 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class TakeDamage : MonoBehaviour
 {
-    /*    ScoreUpdateTestScript score;*/
-
     private Renderer rend;
     private Color originalColour;
+
     public GameObject explosionPrefab;
     public int Health;
+
+    [SerializeField] AudioSource takeDamageSound;
+
+    [SerializeField] float minPitch = 0.95f;
+    [SerializeField] float maxPitch = 1.05f;
+
+    void PlayTakeDamageSound()
+    {
+        takeDamageSound.pitch = Random.Range(minPitch, maxPitch);
+        takeDamageSound.Play();
+    }
+
     private void Awake()
     {
-/*        score = GetComponent<ScoreUpdateTestScript>();*/
         rend = GetComponent<Renderer>();
         originalColour = rend.material.color;
     }
@@ -27,6 +37,7 @@ public class TakeDamage : MonoBehaviour
             Destroy(this.gameObject);
         }
         StartCoroutine(FlashEffect());
+        PlayTakeDamageSound();
     }
 
     IEnumerator FlashEffect()
