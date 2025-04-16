@@ -17,16 +17,23 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+    }
+
+    //Physics stuff always in FixedUpdate plz
+    private void FixedUpdate()
+    {
+        _PlaneControl = new Vector2(PlaneControls.MoveInput.x, 0);
+        rb.velocity = new Vector2(_PlaneControl.x, _PlaneControl.y) * moveSpeed;
+
+        //Clamp to stop movement out of bounds
+        Vector3 clampedPosition = rb.position;
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -45f, 45f);
+        rb.position = clampedPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        _PlaneControl = new Vector2(PlaneControls.MoveInput.x, 0);
-        rb.velocity = new Vector2(_PlaneControl.x, _PlaneControl.y) * moveSpeed;
-        
         float steerInput = PlaneControls.MoveInput.x;
 
         // Smoothly tilts a transform towards a target rotation.
