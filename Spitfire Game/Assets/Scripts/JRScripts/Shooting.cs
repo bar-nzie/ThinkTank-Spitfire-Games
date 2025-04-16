@@ -5,26 +5,30 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] GameplaySubcription PlaneControls;
-    [SerializeField] GameObject BulletPrefab;
-    
-    [SerializeField] float shootDelay = 0.1f;
     
     Rigidbody rb;
-
+    [SerializeField] float shootDelay = 0.1f;
     float Timer;
-    public ParticleSystem muzzleFlashParticleSystem;
-    public ParticleSystem muzzleFlashParticleSystem1;
-    private bool isShooting = false;
 
-    bool ActionButton = false;
+    [SerializeField] GameObject BulletPrefab;
+    [SerializeField] Transform bulletSpawnPoint;
+    [SerializeField] Transform bulletSpawnPoint1;
+    [SerializeField] ParticleSystem muzzleFlashParticleSystem;
+    [SerializeField] ParticleSystem muzzleFlashParticleSystem1;
+    
+    //private bool isShooting = false;
+
+    //bool ActionButton = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         Timer = shootDelay;
         muzzleFlashParticleSystem.Stop();
         muzzleFlashParticleSystem1.Stop();
+
+        //planePosition = Vector3(rb.position.x + 3, rb.position.y, rb.position.z);
     }
 
     // Update is called once per frame
@@ -48,7 +52,8 @@ public class Shooting : MonoBehaviour
                 Timer = 0;
                 muzzleFlashParticleSystem.Play();
                 muzzleFlashParticleSystem1.Play();
-                GameObject MLI_bullet = Instantiate(BulletPrefab, rb.position, rb.rotation);
+                GameObject MLI_bullet = Instantiate(BulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+                GameObject MLI_bullet1 = Instantiate(BulletPrefab, bulletSpawnPoint1.position, bulletSpawnPoint1.rotation);
             }
         }
         else

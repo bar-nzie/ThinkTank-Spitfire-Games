@@ -8,6 +8,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private GameObject[] spawnPoint;
 
     [SerializeField] GameObject[] enemyTypeList;
+    [SerializeField] GameObject EndGameBanner;
 
     [SerializeField] int numberOfEnemiesInWave;
     [SerializeField] int numberOfWaves;
@@ -15,8 +16,6 @@ public class WaveSpawner : MonoBehaviour
 
     [SerializeField] float timeToNextEnemy;
     [SerializeField] float timeToNextWave;
-
-    [SerializeField] GameObject EndGameBanner;
 
     int spawnedEnemies;
     int randomSpawn;

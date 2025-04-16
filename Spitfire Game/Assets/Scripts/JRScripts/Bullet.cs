@@ -6,23 +6,23 @@ public class Bullet : MonoBehaviour
 {
     Rigidbody rb;
 
-    Enemy enemy;
+    //Enemy enemy;
 
     public float Bullet_Speed = 10.0f;
 
     // Start is called before the first frame update
     private void Awake()
     {
-        enemy = GetComponent<Enemy>();
+        //enemy = GetComponent<Enemy>();
         rb = GetComponent<Rigidbody>();
-        rb.velocity = (Vector3.forward * Bullet_Speed);
+        rb.velocity = (transform.right * Bullet_Speed);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = (Vector3.forward * Bullet_Speed);
+        rb.velocity = (transform.right * Bullet_Speed);
     }
 
     private void OnTriggerEnter(Collider other)
