@@ -2,8 +2,7 @@ Sean
 - Attract sequence
 
 James
-- Add sound effects (shooting, plane engines, balloon pop)
-- Pitch shifting
+- Add sound effects (shooting, plane engines)
 - Adding narration
 
 Josh
