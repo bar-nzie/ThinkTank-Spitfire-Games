@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] float timeToNextEnemy;
     [SerializeField] float timeToNextWave;
 
+    [SerializeField] GameObject EndGameBanner;
+
     int spawnedEnemies;
     int randomSpawn;
 
@@ -22,6 +25,8 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(DelayWaveSpawn());
+
+        EndGameBanner.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,7 +34,10 @@ public class WaveSpawner : MonoBehaviour
     {
         if (currentWaveIndex > numberOfWaves)
         {
-            Debug.Log("You Win");
+            //Debug.Log("You Win");
+            EndGameBanner.gameObject.SetActive(true);
+
+            Invoke("BackToMenu", 5.0f);
         }
 
     }
@@ -47,7 +55,6 @@ public class WaveSpawner : MonoBehaviour
             else
             {
                 StartCoroutine(DelayWaveSpawn());
-
             }
         }
 
@@ -79,6 +86,11 @@ public class WaveSpawner : MonoBehaviour
         spawnPointPicker();
         int randomEnemy = Random.Range(0, enemyTypeList.Length);
         Instantiate(enemyTypeList[randomEnemy], new Vector3(spawnPoint[randomSpawn].transform.position.x, spawnPoint[randomSpawn].transform.position.y, spawnPoint[randomSpawn].transform.position.z), Quaternion.identity);
+    }
+
+    private void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 

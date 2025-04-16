@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     [SerializeField] Text ScoreTextRef;
-    [SerializeField] Image ScoreImageRef;
 
     [SerializeField] Image BronzeImageRef;
     [SerializeField] Image SilverImageRef;

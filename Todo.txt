@@ -1,15 +1,14 @@
 Sean
-- Attract sequence/ main menu
-- Stop Pilot moving offscreen
+- Attract sequence
 
 James
-- Win condition?
 - Add sound effects (shooting, plane engines, balloon pop)
 - Pitch shifting
+- Adding narration
+- Stop Pilot moving offscreen
 
 Josh
 - Scrolling text
 
 Morgan
-- Adding the voice in
 - Adjust bullet spawn location to wings
