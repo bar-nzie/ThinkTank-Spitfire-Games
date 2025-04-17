@@ -6,14 +6,15 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField] GameplaySubcription PlaneControls;
     
-    Rigidbody rb;
-    [SerializeField] float shootDelay = 0.1f;
-    float Timer;
-
     //Audio
     [SerializeField] float minPitch = 0.95f;
     [SerializeField] float maxPitch = 1.05f;
     [SerializeField] AudioSource gunfire;
+
+    Rigidbody rb;
+    [SerializeField] float shootDelay = 0.1f;
+    float Timer;
+
 
     [SerializeField] GameObject BulletPrefab;
     [SerializeField] Transform bulletSpawnPoint;

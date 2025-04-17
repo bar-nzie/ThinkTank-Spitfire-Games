@@ -474,7 +474,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: fb6c4eb5ece3d5c4f84576d1ed008d8a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.935
-  m_Pitch: -1.9
+  m_Pitch: -2.77
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -2015,6 +2015,14 @@ PrefabInstance:
       propertyPath: gunfire
       value: 
       objectReference: {fileID: 353615622}
+    - target: {fileID: 630794930459968118, guid: 8e7c95177fa1ea84294a3ae0e3936bea, type: 3}
+      propertyPath: maxPitch
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 630794930459968118, guid: 8e7c95177fa1ea84294a3ae0e3936bea, type: 3}
+      propertyPath: minPitch
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 630794930459968118, guid: 8e7c95177fa1ea84294a3ae0e3936bea, type: 3}
       propertyPath: PlaneControls
       value: 
