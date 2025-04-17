@@ -2,7 +2,7 @@ Fix gunfire effect
 Delete "pop clone" objects
 Adjust text
 More island prefabs?
-Waves get faster?
+Enemy waves get faster?
 
 Sean
 - Attract sequence
