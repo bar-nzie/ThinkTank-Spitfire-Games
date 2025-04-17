@@ -10,6 +10,11 @@ public class Shooting : MonoBehaviour
     [SerializeField] float shootDelay = 0.1f;
     float Timer;
 
+    //Audio
+    [SerializeField] float minPitch = 0.95f;
+    [SerializeField] float maxPitch = 1.05f;
+    [SerializeField] AudioSource gunfire;
+
     [SerializeField] GameObject BulletPrefab;
     [SerializeField] Transform bulletSpawnPoint;
     [SerializeField] Transform bulletSpawnPoint1;
@@ -52,6 +57,7 @@ public class Shooting : MonoBehaviour
                 Timer = 0;
                 muzzleFlashParticleSystem.Play();
                 muzzleFlashParticleSystem1.Play();
+                PlayGunfireSound();
                 GameObject MLI_bullet = Instantiate(BulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                 GameObject MLI_bullet1 = Instantiate(BulletPrefab, bulletSpawnPoint1.position, bulletSpawnPoint1.rotation);
             }
@@ -61,6 +67,19 @@ public class Shooting : MonoBehaviour
             muzzleFlashParticleSystem.Stop();
             muzzleFlashParticleSystem1.Stop();
             Timer = shootDelay;
+        }
+    }
+
+    void PlayGunfireSound()
+    {
+        if (gunfire != null)
+        {
+            gunfire.pitch = Random.Range(minPitch, maxPitch);
+            gunfire.Play();
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource not assigned for gunfire sound!");
         }
     }
 }
