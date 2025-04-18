@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    private NarrationScript narrationScript;
+
     [SerializeField] GameplaySubcription PlaneControls;
     
     //Audio
@@ -30,6 +32,8 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
+        narrationScript = FindObjectOfType<NarrationScript>();
+
         Timer = shootDelay;
         muzzleFlashParticleSystem.Stop();
         muzzleFlashParticleSystem1.Stop();
@@ -61,6 +65,7 @@ public class Shooting : MonoBehaviour
                 PlayGunfireSound();
                 GameObject MLI_bullet = Instantiate(BulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                 GameObject MLI_bullet1 = Instantiate(BulletPrefab, bulletSpawnPoint1.position, bulletSpawnPoint1.rotation);
+                
             }
         }
         else

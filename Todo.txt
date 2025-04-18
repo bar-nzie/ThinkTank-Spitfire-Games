@@ -1,6 +1,4 @@
-Fix gunfire effect
 Delete "pop clone" objects
-Adjust text
 More island prefabs?
 Enemy waves get faster?
 
@@ -8,8 +6,8 @@ Sean
 - Attract sequence
 
 James
-- Add sound effects (shooting, plane engines)
-- Adding narration
+- Have narration guide player properly through tutorial
+- Disable wave spawn during tutorial
 
 Josh
-- Scrolling text
+- Adjust narration text
