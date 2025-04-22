@@ -400,13 +400,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c704d1c562db2438ae2ecbaba4e5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  narration:
+  tutorial:
   - {fileID: 296778542}
-  - {fileID: 296778538}
+  - {fileID: 296778533}
+  - {fileID: 296778535}
   - {fileID: 296778540}
+  - {fileID: 296778536}
+  - {fileID: 296778541}
+  - {fileID: 296778534}
+  narration:
   - {fileID: 296778539}
   - {fileID: 296778538}
-  - {fileID: 296778541}
+  - {fileID: 296778537}
+  pauseAfterClips: 
+  tutorialPlaying: 0
+  waitForPlayerAction: 0
 --- !u!82 &296778533
 AudioSource:
   m_ObjectHideFlags: 0

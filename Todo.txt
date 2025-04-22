@@ -6,7 +6,7 @@ Sean
 - Attract sequence
 
 James
-- Have narration guide player properly through tutorial
+- Maybe split turn this bird into a beast and lets talk about the guns into two clips, one for tutorial other not
 
 Josh
 - Adjust narration text

@@ -80,7 +80,7 @@ public class WaveSpawner : MonoBehaviour
     private IEnumerator DelayWaveSpawn()
     {
         //Wait until narration is finished
-        yield return new WaitUntil(() => !narration.factsArePlaying);
+        yield return new WaitUntil(() => !narration.tutorialPlaying);
 
         yield return new WaitForSeconds(timeToNextWave);
 
