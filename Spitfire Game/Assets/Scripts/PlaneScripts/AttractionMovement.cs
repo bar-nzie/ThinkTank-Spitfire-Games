@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
-public class Movement : MonoBehaviour
+public class AttractionMovement : MonoBehaviour
 {
     [SerializeField] GameplaySubcription PlaneControls;
     Rigidbody rb;
@@ -22,12 +24,13 @@ public class Movement : MonoBehaviour
     //Physics stuff always in FixedUpdate plz
     private void FixedUpdate()
     {
-        _PlaneControl = new Vector2(PlaneControls.MoveInput.x, 0);
+        _PlaneControl = new Vector2(Mathf.Cos(Time.time) * 5, 0);
+        //_PlaneControl = new Vector2(PlaneControls.MoveInput.x, 0);
         rb.velocity = new Vector2(_PlaneControl.x, _PlaneControl.y) * moveSpeed;
 
         //Clamp to stop movement out of bounds
         Vector3 clampedPosition = rb.position;
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -45f, 45f);
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -25f, 25f);
         rb.position = clampedPosition;
     }
 
@@ -53,4 +56,5 @@ public class Movement : MonoBehaviour
         // Dampen towards the target rotation
         transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
     }
+
 }
