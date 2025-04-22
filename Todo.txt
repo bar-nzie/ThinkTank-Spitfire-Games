@@ -7,7 +7,6 @@ Sean
 
 James
 - Have narration guide player properly through tutorial
-- Disable wave spawn during tutorial
 
 Josh
 - Adjust narration text

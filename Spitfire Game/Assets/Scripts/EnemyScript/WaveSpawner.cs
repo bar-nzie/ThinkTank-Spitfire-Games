@@ -17,12 +17,22 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] float timeToNextEnemy;
     [SerializeField] float timeToNextWave;
 
+    private NarrationScript narration;
+
     int spawnedEnemies;
     int randomSpawn;
 
     // Start is called before the first frame update
     void Start()
     {
+        narration = FindObjectOfType<NarrationScript>();
+
+        if (narration == null)
+        {
+            Debug.LogError("NarrationScript not found in the scene!");
+            return;
+        }
+
         StartCoroutine(DelayWaveSpawn());
 
         EndGameBanner.gameObject.SetActive(false);
@@ -44,12 +54,14 @@ public class WaveSpawner : MonoBehaviour
     private void SpawnEnemiesInWave()
     {
         Debug.Log(spawnedEnemies);
-        if (currentWaveIndex <= numberOfWaves) { 
+        if (currentWaveIndex <= numberOfWaves) {
             if (spawnedEnemies < numberOfEnemiesInWave)
             {
+
                 SpawnAnEnemy();
                 spawnedEnemies++;
                 StartCoroutine(DelayEnemySpawn());
+
             }
             else
             {
@@ -67,6 +79,9 @@ public class WaveSpawner : MonoBehaviour
 
     private IEnumerator DelayWaveSpawn()
     {
+        //Wait until narration is finished
+        yield return new WaitUntil(() => !narration.factsArePlaying);
+
         yield return new WaitForSeconds(timeToNextWave);
 
         spawnedEnemies = 0;

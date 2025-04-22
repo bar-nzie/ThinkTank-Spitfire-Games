@@ -7,9 +7,12 @@ public class NarrationScript : MonoBehaviour
 
     [SerializeField] AudioSource[] narration;
 
+    public bool factsArePlaying;
+
     // Start is called before the first frame update
     void Start()
     {
+        factsArePlaying = true;
         StartCoroutine(PlayMyFacts());
     }
 
@@ -24,7 +27,8 @@ public class NarrationScript : MonoBehaviour
         foreach (AudioSource audio in narration)
         {
             audio.Play();
-            yield return new WaitForSeconds(audio.clip.length);
+            yield return new WaitUntil(() => !audio.isPlaying);
         }
+        factsArePlaying = false;
     }
 }
