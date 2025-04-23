@@ -10,6 +10,8 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
     private NarrationScript narration;
 
+    public bool waitingForAction = false;
+
     public float smooth = 5.0f;
     public float tiltAngle = 60.0f;
     public float moveSpeed = 10f;
@@ -24,8 +26,13 @@ public class Movement : MonoBehaviour
     }
 
     //Physics stuff always in FixedUpdate plz
+    //Might have to make this enumerator
     private void FixedUpdate()
     {
+        if (!waitingForAction)
+        {
+            narration.PlayerCompletedAction();
+        }
         _PlaneControl = new Vector2(PlaneControls.MoveInput.x, 0);
         rb.velocity = new Vector2(_PlaneControl.x, _PlaneControl.y) * moveSpeed;
 

@@ -14,10 +14,14 @@ public class NarrationScript : MonoBehaviour
     [HideInInspector] public bool tutorialPlaying = false;
     [HideInInspector] public bool waitForPlayerAction = false;
 
+    private Movement movement;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(PlayTutorialAndThenFacts());
+
+        movement = FindAnyObjectByType<Movement>();
     }
 
     private IEnumerator PlayerTutorial()
@@ -32,6 +36,7 @@ public class NarrationScript : MonoBehaviour
             if (pauseAfterClips.Contains(i))
             {
                 waitForPlayerAction = true;
+                movement.waitingForAction = true;
                 yield return new WaitUntil(() => waitForPlayerAction == false);
             }
         }
