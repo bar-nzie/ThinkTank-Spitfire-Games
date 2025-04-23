@@ -6,7 +6,9 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     [SerializeField] GameplaySubcription PlaneControls;
-    Rigidbody rb;
+
+    private Rigidbody rb;
+    private NarrationScript narration;
 
     public float smooth = 5.0f;
     public float tiltAngle = 60.0f;
@@ -17,6 +19,8 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        narration = FindObjectOfType<NarrationScript>();
     }
 
     //Physics stuff always in FixedUpdate plz

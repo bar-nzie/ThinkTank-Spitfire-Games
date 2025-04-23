@@ -412,7 +412,7 @@ MonoBehaviour:
   - {fileID: 296778539}
   - {fileID: 296778538}
   - {fileID: 296778537}
-  pauseAfterClips: 
+  pauseAfterClips: 0100000003000000
   tutorialPlaying: 0
   waitForPlayerAction: 0
 --- !u!82 &296778533
