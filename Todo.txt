@@ -8,7 +8,6 @@ Sean
 James
 - Maybe split turn this bird into a beast and lets talk about the guns into two clips, 
 one for tutorial other not
-- Add tutorial progression with button press
 
 Josh
 - Adjust narration text

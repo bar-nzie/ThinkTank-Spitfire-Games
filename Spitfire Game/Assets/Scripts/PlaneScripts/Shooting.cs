@@ -17,6 +17,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] float shootDelay = 0.1f;
     float Timer;
 
+    private bool hasShotOnce = false;
 
     [SerializeField] GameObject BulletPrefab;
     [SerializeField] Transform bulletSpawnPoint;
@@ -65,7 +66,12 @@ public class Shooting : MonoBehaviour
                 PlayGunfireSound();
                 GameObject MLI_bullet = Instantiate(BulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
                 GameObject MLI_bullet1 = Instantiate(BulletPrefab, bulletSpawnPoint1.position, bulletSpawnPoint1.rotation);
-                
+
+                if (!hasShotOnce && narrationScript.waitForPlayerActionShooting)
+                {
+                    hasShotOnce = true;
+                    narrationScript.PlayerCompletedActionShooting();
+                }
             }
         }
         else

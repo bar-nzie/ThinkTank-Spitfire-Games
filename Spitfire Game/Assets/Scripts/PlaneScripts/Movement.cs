@@ -8,13 +8,13 @@ public class Movement : MonoBehaviour
     [SerializeField] GameplaySubcription PlaneControls;
 
     private Rigidbody rb;
-    private NarrationScript narration;
-
-    public bool waitingForAction = false;
+    private NarrationScript narrationScript;
 
     public float smooth = 5.0f;
     public float tiltAngle = 60.0f;
     public float moveSpeed = 10f;
+
+    private bool hasMovedOnce = false;
 
     Vector2 _PlaneControl;
 
@@ -22,17 +22,13 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        narration = FindObjectOfType<NarrationScript>();
+        narrationScript = FindObjectOfType<NarrationScript>();
     }
 
     //Physics stuff always in FixedUpdate plz
     //Might have to make this enumerator
     private void FixedUpdate()
     {
-        if (!waitingForAction)
-        {
-            narration.PlayerCompletedAction();
-        }
         _PlaneControl = new Vector2(PlaneControls.MoveInput.x, 0);
         rb.velocity = new Vector2(_PlaneControl.x, _PlaneControl.y) * moveSpeed;
 
@@ -46,6 +42,12 @@ public class Movement : MonoBehaviour
     void Update()
     {
         float steerInput = PlaneControls.MoveInput.x;
+
+        if (narrationScript.waitForPlayerActionFlying == true && !hasMovedOnce && Mathf.Abs(steerInput) > 0.1f)
+        {
+            hasMovedOnce = true;
+            narrationScript.PlayerCompletedActionFlying();
+        }
 
         // Smoothly tilts a transform towards a target rotation.
         float tiltAroundZ = steerInput * tiltAngle;

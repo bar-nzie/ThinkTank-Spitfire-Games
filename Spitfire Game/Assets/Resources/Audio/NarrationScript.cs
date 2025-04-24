@@ -12,7 +12,8 @@ public class NarrationScript : MonoBehaviour
     [SerializeField] private List<int> pauseAfterClips = new List<int>();
 
     [HideInInspector] public bool tutorialPlaying = false;
-    [HideInInspector] public bool waitForPlayerAction = false;
+    [HideInInspector] public bool waitForPlayerActionFlying = false;
+    [HideInInspector] public bool waitForPlayerActionShooting = false;
 
     private Movement movement;
 
@@ -34,19 +35,29 @@ public class NarrationScript : MonoBehaviour
 
             //Check if need to wait for the player before playing next clip
             if (pauseAfterClips.Contains(i))
-            {
-                waitForPlayerAction = true;
-                movement.waitingForAction = true;
-                yield return new WaitUntil(() => waitForPlayerAction == false);
-            }
+                if (i == 1)
+                {
+                    waitForPlayerActionFlying = true;
+                    yield return new WaitUntil(() => waitForPlayerActionFlying == false);
+                }
+                else if (i == 3)
+                {
+                    waitForPlayerActionShooting = true;
+                    yield return new WaitUntil(() => waitForPlayerActionShooting == false);
+                }
         }
         tutorialPlaying = false;
     }
 
-    public void PlayerCompletedAction()
+    public void PlayerCompletedActionFlying()
     {
-        waitForPlayerAction = false;
+        waitForPlayerActionFlying = false;
     }
+    public void PlayerCompletedActionShooting()
+    {
+        waitForPlayerActionShooting = false;
+    }
+
 
     private IEnumerator PlayMyFacts()
     {
