@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
 
     private Rigidbody rb;
     private NarrationScript narrationScript;
+    private ScrollingText scrollingText;
 
     public float smooth = 5.0f;
     public float tiltAngle = 60.0f;
@@ -23,6 +24,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         narrationScript = FindObjectOfType<NarrationScript>();
+        scrollingText = FindObjectOfType<ScrollingText>();
     }
 
     //Physics stuff always in FixedUpdate plz
@@ -47,6 +49,7 @@ public class Movement : MonoBehaviour
         {
             hasMovedOnce = true;
             narrationScript.PlayerCompletedActionFlying();
+            scrollingText.PlayerCompletedActionFlying();
         }
 
         // Smoothly tilts a transform towards a target rotation.

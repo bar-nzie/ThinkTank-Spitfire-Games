@@ -104,7 +104,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void BackToMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("AttractionScene");
     }
 }
 

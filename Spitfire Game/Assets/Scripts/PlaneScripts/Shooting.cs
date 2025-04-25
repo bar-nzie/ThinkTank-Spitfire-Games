@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     private NarrationScript narrationScript;
+    private ScrollingText scrollingText;
 
     [SerializeField] GameplaySubcription PlaneControls;
     
@@ -34,6 +35,7 @@ public class Shooting : MonoBehaviour
     {
         //rb = GetComponent<Rigidbody>();
         narrationScript = FindObjectOfType<NarrationScript>();
+        scrollingText = FindObjectOfType<ScrollingText>();
 
         Timer = shootDelay;
         muzzleFlashParticleSystem.Stop();
@@ -71,6 +73,7 @@ public class Shooting : MonoBehaviour
                 {
                     hasShotOnce = true;
                     narrationScript.PlayerCompletedActionShooting();
+                    scrollingText.PlayerCompletedActionShooting();
                 }
             }
         }

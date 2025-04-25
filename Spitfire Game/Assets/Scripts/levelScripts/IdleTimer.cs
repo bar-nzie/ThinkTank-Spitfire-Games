@@ -28,6 +28,6 @@ public class IdleTimer : MonoBehaviour
 
     private void LoadStartMenu()
     {
-        SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene("AttractionScene");
 }
     }
