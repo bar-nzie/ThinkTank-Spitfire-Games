@@ -72,6 +72,8 @@ public class NarrationScript : MonoBehaviour
     private IEnumerator PlayTutorialAndThenFacts()
     {
         yield return StartCoroutine(PlayerTutorial());
+
+        yield return new WaitForSeconds(2f);
         yield return StartCoroutine(PlayMyFacts());
     }
 }

@@ -11,7 +11,10 @@ public class Score : MonoBehaviour
     [SerializeField] Image SilverImageRef;
     [SerializeField] Image GoldImageRef;
 
-    [SerializeField] int scoreAdd = 0;
+    int scoreAdd = 0;
+
+    [SerializeField] int scoreSilver = 15;
+    [SerializeField] int scoreGold = 30;
 
     private static Score _instance;
 
@@ -51,12 +54,12 @@ public class Score : MonoBehaviour
         GoldImageRef.gameObject.SetActive(false);
 
 
-        if (scoreValue >= 10)
+        if (scoreValue >= scoreSilver)
         {
             SilverImageRef.gameObject.SetActive(true);
             BronzeImageRef.gameObject.SetActive(false);
         }
-        if (scoreValue >= 20)
+        if (scoreValue >= scoreGold)
         {
             GoldImageRef.gameObject.SetActive(true);
             SilverImageRef.gameObject.SetActive(false);
