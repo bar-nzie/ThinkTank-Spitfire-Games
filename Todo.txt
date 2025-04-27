@@ -2,12 +2,6 @@ Delete "pop clone" objects
 More island prefabs?
 Enemy waves get faster?
 
-Sean
-- Attract sequence
-
 James
 - Maybe split turn this bird into a beast and lets talk about the guns into two clips, 
 one for tutorial other not
-
-Josh
-- Adjust narration text
