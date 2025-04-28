@@ -6,7 +6,7 @@ public class AttractionShooting : MonoBehaviour
 {
     private NarrationScript narrationScript;
 
-    [SerializeField] GameplaySubcription PlaneControls;
+    [SerializeField] MenuSubcription MenuControls;
     
     //Audio
     [SerializeField] float minPitch = 0.95f;

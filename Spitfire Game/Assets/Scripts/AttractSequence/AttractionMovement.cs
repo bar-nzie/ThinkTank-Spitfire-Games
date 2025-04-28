@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class AttractionMovement : MonoBehaviour
 {
-    [SerializeField] GameplaySubcription PlaneControls;
+    [SerializeField] MenuSubcription MenuControls;
     Rigidbody rb;
 
     public float smooth = 5.0f;
@@ -24,7 +24,7 @@ public class AttractionMovement : MonoBehaviour
     //Physics stuff always in FixedUpdate plz
     private void FixedUpdate()
     {
-        _PlaneControl = new Vector2(Mathf.Cos(Time.time) * 5, 0);
+        _PlaneControl = new Vector2(Mathf.Cos(Time.fixedTime) * 5, 0);
         //_PlaneControl = new Vector2(PlaneControls.MoveInput.x, 0);
         rb.velocity = new Vector2(_PlaneControl.x, _PlaneControl.y) * moveSpeed;
 
@@ -32,12 +32,32 @@ public class AttractionMovement : MonoBehaviour
         Vector3 clampedPosition = rb.position;
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, -25f, 25f);
         rb.position = clampedPosition;
+
+        //float steerInput = rb.velocity.x / (5f * moveSpeed);
+
+        //float tiltAroundZ = steerInput * tiltAngle;
+
+        //Quaternion target = Quaternion.Euler(-tiltAroundZ, -90, 0);
+
+        //transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+        //transform.rotation = target;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float steerInput = PlaneControls.MoveInput.x;
+        //float steerInput = MenuControls.MoveInput.x;
+
+        float horizontalVelocity = rb.velocity.x;
+
+        // Deadzone to prevent tilt when movement is negligible
+        if (Mathf.Abs(horizontalVelocity) < 0.1f)
+        {
+            horizontalVelocity = 0f;
+        }
+
+        float steerInput = horizontalVelocity / (5f * moveSpeed);
+        steerInput = Mathf.Clamp(steerInput, -1f, 1f);
 
         // Smoothly tilts a transform towards a target rotation.
         float tiltAroundZ = steerInput * tiltAngle;

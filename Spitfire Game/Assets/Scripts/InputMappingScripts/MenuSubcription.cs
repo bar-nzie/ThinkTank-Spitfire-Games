@@ -20,8 +20,8 @@ public class MenuSubcription : MonoBehaviour
         _Input.Menu.StickMovement.performed += SetMovement;
         _Input.Menu.StickMovement.canceled += SetMovement;
 
-        _Input.Menu.Actionbutton.started += SetMovement;
-        _Input.Menu.Actionbutton.canceled += SetMovement;
+        _Input.Menu.Actionbutton.started += SetAction;
+        _Input.Menu.Actionbutton.canceled += SetAction;
 
 
     }
@@ -33,8 +33,8 @@ public class MenuSubcription : MonoBehaviour
         _Input.Menu.StickMovement.performed -= SetMovement;
         _Input.Menu.StickMovement.canceled -= SetMovement;
 
-        _Input.Menu.Actionbutton.started -= SetMovement;
-        _Input.Menu.Actionbutton.canceled -= SetMovement;
+        _Input.Menu.Actionbutton.started -= SetAction;
+        _Input.Menu.Actionbutton.canceled -= SetAction;
     }
 
     void SetMovement(InputAction.CallbackContext ctx)
