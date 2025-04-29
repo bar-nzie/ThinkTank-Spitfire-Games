@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class IdleTimer : MonoBehaviour
 {
-    public float idleTimeLimit = 20f;
+    public float idleTimeLimit = 40f;
     private float idleTime = 0f;
 
     // Update is called once per frame

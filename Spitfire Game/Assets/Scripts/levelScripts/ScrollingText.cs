@@ -9,15 +9,14 @@ public class ScrollingText : MonoBehaviour
     public RectTransform textTransform;
     public TextMeshProUGUI scrollingText;
     private int currentIndex = 0;
-    public float typeSpeed = 0.0f;
-    private Movement movement;
+    public float typeSpeed = 0.0f * Time.deltaTime;
 
     private string Track1 = "Welcome to the skies pilot! You're sittin' in a legend - the Supermarine Spitfire. She's not just a plane, she's a symbol of defiance, grit and British engineering at its finest!";
     private string Track2 = "Look at those wings - elliptical and sleek. Not just for show! Designed by R.J. Mitchell to cut through the air like a razor. That shape gives you tighter turns and faster rolls.";
     private string Track3 = "Try it out now: Move left and right by pushing the joystick.";
     private string NiceJob = "Nice Job";
     private string Track4 = "First took to the air back in 1936. By the time the war came knockin', the Spitfire was ready. She earned her stripes in the Battle of Britain - held the line when the world damn near fell apart. That hum you hear? That's the Rolls-Royce Merlin engine singin'.";
-    private string Track44 = " Pure power, it can reach speeds up to 360 miles per hour, making it one of the fastest planes of its time. Some later models even ran on the Griffon engine - turned this bird into a beast!";
+    private string Track44 = "Pure power, it can reach speeds up to 360 miles per hour, making it one of the fastest planes of its time. Some later models even ran on the Griffon engine - turned this bird into a beast!";
     private string Track5 = "Now, let’s talk about the guns, cadet. The Spitfire is armed with eight .303 Browning machine guns, each shooting 1200 rounds per minute, making it especially effective against enemy aircraft. Try shooting the guns now with the button next to the joystick.";
     private string GreatShooting = "Great Shooting!";
     private string Track6 = "In 1941 a Spitfire pilot could have had as little as six months of training and 150 flight hours before being sent up to face off against the Luftwaffe's finest. However, seeing as you’re a natural, we can start with some more intense training straight away.";
@@ -35,7 +34,6 @@ public class ScrollingText : MonoBehaviour
     {
         Transcript = new string[] { Track1, Track2, Track3, NiceJob, Track4, Track44, Track5, GreatShooting, Track6, Objective, Track7, Track8, Track9, Track10 };
         StartCoroutine(TypeSentence());
-        movement = FindAnyObjectByType<Movement>();
     }
 
     IEnumerator TypeSentence()
@@ -74,7 +72,7 @@ public class ScrollingText : MonoBehaviour
             }
 
             currentIndex++;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(typeSpeed);
         }
     }
 
